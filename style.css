@@ -141,15 +141,15 @@ body {
   .birthday-title {
     font-size: 3.5vmin;
     top: 2%;
-    left: 3%;
-    transform: none;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .birthday-wish {
     font-size: 1.5vmin;
     top: 6%;
-    left: 3%;
-    transform: none;
+    left: 50%;
+    transform: translateX(-50%);
     max-width: 94%;
   }
 }
@@ -173,16 +173,16 @@ body {
   .birthday-title {
     font-size: 3.5vmin;
     top: 2%;
-    left: 3%;
-    transform: none;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .birthday-wish {
     font-size: 1.6vmin;
     max-width: 95%;
     top: 6%;
-    left: 3%;
-    transform: none;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
@@ -205,15 +205,15 @@ body {
   .birthday-title {
     font-size: 4vmin;
     top: 4%;
-    left: 4%;
-    transform: none;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .birthday-wish {
     font-size: 2vmin;
     top: 10%;
-    left: 4%;
-    transform: none;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
@@ -236,15 +236,15 @@ body {
   .birthday-title {
     font-size: 4.5vmin;
     top: 5%;
-    left: 5%;
-    transform: none;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .birthday-wish {
     font-size: 2.2vmin;
     top: 12%;
-    left: 5%;
-    transform: none;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
@@ -2824,13 +2824,13 @@ body {
 .birthday-title {
   position: fixed;
   top: 8%;
-  left: 20%;
+  left: 50%;
   transform: translateX(-50%);
   font-size: 5vmin;
   color: #00d4ff;
   font-family: 'Segoe Script', 'Brush Script MT', cursive, sans-serif;
   text-shadow: 0 0 20px rgba(0, 212, 255, 0.9), 0 0 40px rgba(0, 150, 255, 0.6), 0 2px 10px rgba(255, 255, 255, 0.5);
-  text-align: left;
+  text-align: center;
   z-index: 999;
   white-space: nowrap;
   opacity: 0;
@@ -2846,7 +2846,7 @@ body {
 .birthday-wish {
   position: fixed;
   top: 15%;
-  left: 18%;
+  left: 50%;
   transform: translateX(-50%);
   font-size: 2.5vmin;
   color: #b0e0ff;
@@ -2856,6 +2856,7 @@ body {
   z-index: 999;
   opacity: 0;
   line-height: 1.6;
+  text-align: center;
 }
 
 .birthday-wish .cursor {
