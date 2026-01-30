@@ -2721,8 +2721,8 @@ body {
   bottom: -55vmin;
   left: 50%;
   transform: translateX(-50%);
-  width: 55vmin;
-  height: 22vmin;
+  width: 60vmin;
+  height: 35vmin;
   background: linear-gradient(180deg,
       rgba(180, 220, 255, 0.98) 0%,
       rgba(140, 200, 250, 0.96) 40%,
