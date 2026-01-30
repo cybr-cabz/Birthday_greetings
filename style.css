@@ -982,7 +982,7 @@ body {
   width: 9vmin;
   height: 4vmin;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: rgb(255,255,255);
 }
 
 .flower__white-circle::after {
@@ -2879,3 +2879,4 @@ body {
     opacity: 0;
   }
 }
+
