@@ -30,12 +30,7 @@ body {
   height: 100%;
   min-height: 100vh;
   min-width: 100vw;
-  filter: blur(0.1vmin);
-  background-image: radial-gradient(ellipse at top, transparent 0%, var(--dark-color)),
-    radial-gradient(ellipse at bottom, var(--dark-color), rgba(145, 233, 255, 0.623)), repeating-linear-gradient(220deg, rgb(0, 0, 0) 0px,
-      rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), repeating-linear-gradient(189deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px),
-    repeating-linear-gradient(148deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), linear-gradient(90deg, rgb(7, 30, 107), rgb(240, 240, 240));
-  background-size: cover;
+  background: linear-gradient(to bottom, #87CEEB, #1e3a8a);
 }
 
 /* Simple styles for the intro page */
@@ -46,7 +41,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #222;
+  background: rgb(85, 160, 221);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -68,7 +63,7 @@ body {
   padding: 0.5em 2em;
   border-radius: 1em;
   border: none;
-  background: #ff69b4;
+  background: #69afff;
   color: #fff;
   margin-top: 1em;
   cursor: pointer;
@@ -76,7 +71,7 @@ body {
 }
 
 #intro-page button:hover {
-  background: #e055a1;
+  background: #55ade0;
 }
 
 /* Soft subtext shown above the button on the intro page */
@@ -102,7 +97,7 @@ body {
   width: 180px;
   height: auto;
   border-radius: 15px;
-  box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+  box-shadow: 0 0 20px rgba(105, 195, 255, 0.5);
 }
 
 /* Bouquet container - uses dynamic scaling based on viewport */
@@ -125,17 +120,17 @@ body {
 /* Extra small phones (portrait) */
 @media screen and (max-width: 380px) {
   .flowers {
-    --bouquet-scale: 0.22;
-    top: 48%;
+    --bouquet-scale: 0.18;
+    top: 50%;
   }
 
   .bouquet-wrapper-back,
   .bouquet-wrapper-sides,
   .bouquet-wrapper-front {
-    --wrapper-scale: 0.22;
+    --wrapper-scale: 0.18;
     transform: translate(-50%, -50%) scale(var(--wrapper-scale));
     transform-origin: center center;
-    top: 48%;
+    top: 50%;
   }
 
   .birthday-title {
@@ -146,41 +141,41 @@ body {
   }
 
   .birthday-wish {
-    font-size: 1.5vmin;
-    top: 6%;
+    font-size: 1.8vmin;
+    top: 8%;
     left: 50%;
     transform: translateX(-50%);
-    max-width: 94%;
+    max-width: 90%;
   }
 }
 
 /* Small phones */
 @media screen and (min-width: 381px) and (max-width: 480px) {
   .flowers {
-    --bouquet-scale: 0.25;
-    top: 48%;
+    --bouquet-scale: 0.2;
+    top: 50%;
   }
 
   .bouquet-wrapper-back,
   .bouquet-wrapper-sides,
   .bouquet-wrapper-front {
-    --wrapper-scale: 0.25;
+    --wrapper-scale: 0.2;
     transform: translate(-50%, -50%) scale(var(--wrapper-scale));
     transform-origin: center center;
-    top: 48%;
+    top: 50%;
   }
 
   .birthday-title {
-    font-size: 3.5vmin;
+    font-size: 4vmin;
     top: 2%;
     left: 50%;
     transform: translateX(-50%);
   }
 
   .birthday-wish {
-    font-size: 1.6vmin;
-    max-width: 95%;
-    top: 6%;
+    font-size: 2vmin;
+    max-width: 90%;
+    top: 8%;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -982,7 +977,7 @@ body {
   width: 9vmin;
   height: 4vmin;
   border-radius: 50%;
-  background-color: rgb(255,255,255);
+  background-color: #fff;
 }
 
 .flower__white-circle::after {
@@ -2879,4 +2874,3 @@ body {
     opacity: 0;
   }
 }
-
