@@ -100,39 +100,221 @@ body {
   box-shadow: 0 0 20px rgba(105, 195, 255, 0.5);
 }
 
-/* 🌺 UNIVERSAL RESPONSIVE BOUQUET - ONE LINE SCALES ALL DEVICES! */
+/* Bouquet container - uses dynamic scaling based on viewport */
 .flowers {
   position: fixed;
-  top: 50%;
+  top: 55%;
   left: 50%;
-  --bouquet-scale: clamp(0.35, 8vmin, 0.85);
+  /* Dynamic scaling: uses the smaller of width or height to ensure it fits */
+  --bouquet-scale: min(0.8, calc(100vw / 150vmin), calc(100vh / 130vmin));
   transform: translate(-50%, -50%) scale(var(--bouquet-scale));
   transform-origin: center center;
   z-index: 10;
 }
 
-.bouquet-wrapper-back,
-.bouquet-wrapper-sides,
-.bouquet-wrapper-front {
-  --wrapper-scale: clamp(0.35, 8vmin, 0.85);
-  transform: translate(-50%, -50%) scale(var(--wrapper-scale));
-  transform-origin: center center;
-  top: 50%;
+/* 
+  Responsive scaling for different screen sizes 
+  Uses aspect ratio and viewport queries for better fit
+*/
+
+/* Extra small phones (portrait) */
+@media screen and (max-width: 380px) {
+  .flowers {
+    --bouquet-scale: 0.45;
+    top: 50%;
+  }
+
+  .bouquet-wrapper-back,
+  .bouquet-wrapper-sides,
+  .bouquet-wrapper-front {
+    --wrapper-scale: 0.45;
+    transform: translate(-50%, -50%) scale(var(--wrapper-scale));
+    transform-origin: center center;
+    top: 50%;
+  }
+
+  .birthday-title {
+    font-size: 3.5vmin;
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .birthday-wish {
+    font-size: 1.8vmin;
+    top: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 90%;
+  }
 }
 
-.birthday-title {
-  font-size: clamp(3vmin, 4vmin, 5vmin);
-  top: clamp(2%, 5%, 8%);
-  left: 50%;
-  transform: translateX(-50%);
+/* Small phones */
+@media screen and (min-width: 381px) and (max-width: 480px) {
+  .flowers {
+    --bouquet-scale: 0.5;
+    top: 50%;
+  }
+
+  .bouquet-wrapper-back,
+  .bouquet-wrapper-sides,
+  .bouquet-wrapper-front {
+    --wrapper-scale: 0.5;
+    transform: translate(-50%, -50%) scale(var(--wrapper-scale));
+    transform-origin: center center;
+    top: 50%;
+  }
+
+  .birthday-title {
+    font-size: 4vmin;
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .birthday-wish {
+    font-size: 2vmin;
+    max-width: 90%;
+    top: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
-.birthday-wish {
-  font-size: clamp(1.8vmin, 2.2vmin, 2.5vmin);
-  top: clamp(8%, 12%, 15%);
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: 90%;
+/* Tablets in portrait */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .flowers {
+    --bouquet-scale: 0.45;
+    top: 55%;
+  }
+
+  .bouquet-wrapper-back,
+  .bouquet-wrapper-sides,
+  .bouquet-wrapper-front {
+    --wrapper-scale: 0.45;
+    transform: translate(-50%, -50%) scale(var(--wrapper-scale));
+    transform-origin: center center;
+    top: 55%;
+  }
+
+  .birthday-title {
+    font-size: 4vmin;
+    top: 4%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .birthday-wish {
+    font-size: 2vmin;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Tablets in landscape / small laptops */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .flowers {
+    --bouquet-scale: 0.55;
+    top: 55%;
+  }
+
+  .bouquet-wrapper-back,
+  .bouquet-wrapper-sides,
+  .bouquet-wrapper-front {
+    --wrapper-scale: 0.55;
+    transform: translate(-50%, -50%) scale(var(--wrapper-scale));
+    transform-origin: center center;
+    top: 55%;
+  }
+
+  .birthday-title {
+    font-size: 4.5vmin;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .birthday-wish {
+    font-size: 2.2vmin;
+    top: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Standard laptops / desktops */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+  .flowers {
+    --bouquet-scale: 0.65;
+    top: 55%;
+  }
+
+  .bouquet-wrapper-back,
+  .bouquet-wrapper-sides,
+  .bouquet-wrapper-front {
+    --wrapper-scale: 0.65;
+    transform: translate(-50%, -50%) scale(var(--wrapper-scale));
+    top: 55%;
+  }
+}
+
+/* Large desktops */
+@media screen and (min-width: 1441px) {
+  .flowers {
+    --bouquet-scale: 0.8;
+    top: 52%;
+  }
+
+  .bouquet-wrapper-back,
+  .bouquet-wrapper-sides,
+  .bouquet-wrapper-front {
+    --wrapper-scale: 0.8;
+    transform: translate(-50%, -50%) scale(var(--wrapper-scale));
+    top: 52%;
+  }
+}
+
+/* Handle very short viewport heights (landscape phones) */
+@media screen and (max-height: 500px) {
+  .flowers {
+    --bouquet-scale: 0.25;
+    top: 60%;
+  }
+
+  .bouquet-wrapper-back,
+  .bouquet-wrapper-sides,
+  .bouquet-wrapper-front {
+    --wrapper-scale: 0.25;
+    transform: translate(-50%, -50%) scale(var(--wrapper-scale));
+    top: 60%;
+  }
+
+  .birthday-title {
+    font-size: 3vmin;
+    top: 2%;
+  }
+
+  .birthday-wish {
+    font-size: 1.5vmin;
+    top: 8%;
+    max-width: 50%;
+  }
+}
+
+/* Handle medium short heights */
+@media screen and (max-height: 700px) and (min-height: 501px) {
+  .flowers {
+    --bouquet-scale: min(var(--bouquet-scale), 0.4);
+    top: 58%;
+  }
+
+  .bouquet-wrapper-back,
+  .bouquet-wrapper-sides,
+  .bouquet-wrapper-front {
+    --wrapper-scale: min(var(--wrapper-scale, 0.5), 0.4);
+    top: 58%;
+  }
 }
 
 .flower {
@@ -2640,8 +2822,9 @@ body {
   left: 50%;
   transform: translateX(-50%);
   font-size: 5vmin;
-  color: rgb(0, 140, 255);
-  font-family: 'Segoe Script', 'Brush Script MT', cursive, sans-serif;
+  color: #2f00ff;
+  font-family: 'Segoe Script', 'Brush Script MT', cursigb(0, 140, 255);
+  font-family: 'Segoe Srgba(0, 212, 255, 0.9) MT', cursive, sans-serif;
   text-shadow: 0 0 20px rgba(0, 17, 255, 0.9), 0 0 40px rgba(0, 150, 255, 0.6), 0 2px 10px rgba(255, 255, 255, 0.5);
   text-align: center;
   z-index: 999;
