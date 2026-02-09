@@ -120,14 +120,14 @@ body {
 /* Extra small phones (portrait) */
 @media screen and (max-width: 380px) {
   .flowers {
-    --bouquet-scale: 0.18;
+    --bouquet-scale: 0.45;
     top: 50%;
   }
 
   .bouquet-wrapper-back,
   .bouquet-wrapper-sides,
   .bouquet-wrapper-front {
-    --wrapper-scale: 0.18;
+    --wrapper-scale: 0.45;
     transform: translate(-50%, -50%) scale(var(--wrapper-scale));
     transform-origin: center center;
     top: 50%;
@@ -152,14 +152,14 @@ body {
 /* Small phones */
 @media screen and (min-width: 381px) and (max-width: 480px) {
   .flowers {
-    --bouquet-scale: 0.2;
+    --bouquet-scale: 0.5;
     top: 50%;
   }
 
   .bouquet-wrapper-back,
   .bouquet-wrapper-sides,
   .bouquet-wrapper-front {
-    --wrapper-scale: 0.2;
+    --wrapper-scale: 0.5;
     transform: translate(-50%, -50%) scale(var(--wrapper-scale));
     transform-origin: center center;
     top: 50%;
@@ -2874,4 +2874,3 @@ body {
     opacity: 0;
   }
 }
-
