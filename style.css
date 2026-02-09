@@ -246,14 +246,14 @@ body {
 /* Standard laptops / desktops */
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
   .flowers {
-    --bouquet-scale: 0.65;
+    --bouquet-scale: 0.5;
     top: 55%;
   }
 
   .bouquet-wrapper-back,
   .bouquet-wrapper-sides,
   .bouquet-wrapper-front {
-    --wrapper-scale: 0.65;
+    --wrapper-scale: 0.5;
     transform: translate(-50%, -50%) scale(var(--wrapper-scale));
     top: 55%;
   }
@@ -262,14 +262,14 @@ body {
 /* Large desktops */
 @media screen and (min-width: 1441px) {
   .flowers {
-    --bouquet-scale: 0.8;
+    --bouquet-scale: 0.55;
     top: 52%;
   }
 
   .bouquet-wrapper-back,
   .bouquet-wrapper-sides,
   .bouquet-wrapper-front {
-    --wrapper-scale: 0.8;
+    --wrapper-scale: 0.55;
     transform: translate(-50%, -50%) scale(var(--wrapper-scale));
     top: 52%;
   }
