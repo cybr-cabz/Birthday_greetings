@@ -30,7 +30,12 @@ body {
   height: 100%;
   min-height: 100vh;
   min-width: 100vw;
-  background: linear-gradient(to bottom, #87CEEB, #1e3a8a);
+  filter: blur(0.1vmin);
+  background-image: radial-gradient(ellipse at top, transparent 0%, var(--dark-color)),
+    radial-gradient(ellipse at bottom, var(--dark-color), rgba(145, 233, 255, 0.623)), repeating-linear-gradient(220deg, rgb(0, 0, 0) 0px,
+      rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), repeating-linear-gradient(189deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px),
+    repeating-linear-gradient(148deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), linear-gradient(90deg, rgb(7, 30, 107), rgb(240, 240, 240));
+  background-size: cover;
 }
 
 /* Simple styles for the intro page */
@@ -100,16 +105,24 @@ body {
   box-shadow: 0 0 20px rgba(105, 195, 255, 0.5);
 }
 
-/* Bouquet container - uses dynamic scaling based on viewport */
+/* 🌺 ONE-LINE UNIVERSAL RESPONSIVE BOUQUET - Auto-scales from tiny iPhones to big laptops! */
 .flowers {
   position: fixed;
   top: 50%;
   left: 50%;
-  /* Base responsive scale - will be overridden by media queries for specific devices */
-  --bouquet-scale: 0.65;
+  --bouquet-scale: clamp(0.45, 0.45vw + 0.3, 0.6);
   transform: translate(-50%, -50%) scale(var(--bouquet-scale));
   transform-origin: center center;
   z-index: 10;
+}
+
+.bouquet-wrapper-back,
+.bouquet-wrapper-sides,
+.bouquet-wrapper-front {
+  --wrapper-scale: clamp(0.45, 0.45vw + 0.3, 0.6);
+  transform: translate(-50%, -50%) scale(var(--wrapper-scale));
+  transform-origin: center center;
+  top: 50%;
 }
 
 /* 
@@ -120,17 +133,17 @@ body {
 /* Extra small phones (portrait) */
 @media screen and (max-width: 380px) {
   .flowers {
-    --bouquet-scale: 0.65;
-    top: 50%;
+    --bouquet-scale: 0.22;
+    top: 48%;
   }
 
   .bouquet-wrapper-back,
   .bouquet-wrapper-sides,
   .bouquet-wrapper-front {
-    --wrapper-scale: 0.65;
+    --wrapper-scale: 0.22;
     transform: translate(-50%, -50%) scale(var(--wrapper-scale));
     transform-origin: center center;
-    top: 50%;
+    top: 48%;
   }
 
   .birthday-title {
@@ -141,41 +154,41 @@ body {
   }
 
   .birthday-wish {
-    font-size: 1.8vmin;
-    top: 8%;
+    font-size: 1.5vmin;
+    top: 6%;
     left: 50%;
     transform: translateX(-50%);
-    max-width: 90%;
+    max-width: 94%;
   }
 }
 
 /* Small phones */
 @media screen and (min-width: 381px) and (max-width: 480px) {
   .flowers {
-    --bouquet-scale: 0.7;
-    top: 50%;
+    --bouquet-scale: 0.25;
+    top: 48%;
   }
 
   .bouquet-wrapper-back,
   .bouquet-wrapper-sides,
   .bouquet-wrapper-front {
-    --wrapper-scale: 0.7;
+    --wrapper-scale: 0.25;
     transform: translate(-50%, -50%) scale(var(--wrapper-scale));
     transform-origin: center center;
-    top: 50%;
+    top: 48%;
   }
 
   .birthday-title {
-    font-size: 4vmin;
+    font-size: 3.5vmin;
     top: 2%;
     left: 50%;
     transform: translateX(-50%);
   }
 
   .birthday-wish {
-    font-size: 2vmin;
-    max-width: 90%;
-    top: 8%;
+    font-size: 1.6vmin;
+    max-width: 95%;
+    top: 6%;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -246,14 +259,14 @@ body {
 /* Standard laptops / desktops */
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
   .flowers {
-    --bouquet-scale: 0.5;
+    --bouquet-scale: 0.65;
     top: 55%;
   }
 
   .bouquet-wrapper-back,
   .bouquet-wrapper-sides,
   .bouquet-wrapper-front {
-    --wrapper-scale: 0.5;
+    --wrapper-scale: 0.65;
     transform: translate(-50%, -50%) scale(var(--wrapper-scale));
     top: 55%;
   }
@@ -262,14 +275,14 @@ body {
 /* Large desktops */
 @media screen and (min-width: 1441px) {
   .flowers {
-    --bouquet-scale: 0.55;
+    --bouquet-scale: 0.8;
     top: 52%;
   }
 
   .bouquet-wrapper-back,
   .bouquet-wrapper-sides,
   .bouquet-wrapper-front {
-    --wrapper-scale: 0.55;
+    --wrapper-scale: 0.8;
     transform: translate(-50%, -50%) scale(var(--wrapper-scale));
     top: 52%;
   }
