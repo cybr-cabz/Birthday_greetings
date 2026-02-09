@@ -103,10 +103,10 @@ body {
 /* Bouquet container - uses dynamic scaling based on viewport */
 .flowers {
   position: fixed;
-  top: 55%;
+  top: 50%;
   left: 50%;
-  /* Dynamic scaling: uses the smaller of width or height to ensure it fits */
-  --bouquet-scale: min(0.8, calc(100vw / 150vmin), calc(100vh / 130vmin));
+  /* Base responsive scale - will be overridden by media queries for specific devices */
+  --bouquet-scale: 0.65;
   transform: translate(-50%, -50%) scale(var(--bouquet-scale));
   transform-origin: center center;
   z-index: 10;
@@ -120,14 +120,14 @@ body {
 /* Extra small phones (portrait) */
 @media screen and (max-width: 380px) {
   .flowers {
-    --bouquet-scale: 0.45;
+    --bouquet-scale: 0.65;
     top: 50%;
   }
 
   .bouquet-wrapper-back,
   .bouquet-wrapper-sides,
   .bouquet-wrapper-front {
-    --wrapper-scale: 0.45;
+    --wrapper-scale: 0.65;
     transform: translate(-50%, -50%) scale(var(--wrapper-scale));
     transform-origin: center center;
     top: 50%;
@@ -152,14 +152,14 @@ body {
 /* Small phones */
 @media screen and (min-width: 381px) and (max-width: 480px) {
   .flowers {
-    --bouquet-scale: 0.5;
+    --bouquet-scale: 0.7;
     top: 50%;
   }
 
   .bouquet-wrapper-back,
   .bouquet-wrapper-sides,
   .bouquet-wrapper-front {
-    --wrapper-scale: 0.5;
+    --wrapper-scale: 0.7;
     transform: translate(-50%, -50%) scale(var(--wrapper-scale));
     transform-origin: center center;
     top: 50%;
